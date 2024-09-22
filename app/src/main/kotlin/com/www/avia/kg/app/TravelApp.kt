@@ -18,7 +18,6 @@ import timber.log.Timber
 
 open class TravelApp : Application() {
 
-
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
