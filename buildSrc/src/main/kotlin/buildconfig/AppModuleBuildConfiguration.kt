@@ -38,7 +38,7 @@ class AppModuleBuildConfiguration(
 
     private fun setupMainArguments(defaultConfig: ApplicationDefaultConfig) {
         defaultConfig.apply {
-            applicationId = Config.APPLICATION_ID
+            applicationId = "com.www.avia.kg.app"//Config.APPLICATION_ID
             versionCode = Config.VERSION_CODE
             versionName = Config.VERSION_NAME
         }
@@ -51,7 +51,7 @@ class AppModuleBuildConfiguration(
             getByName(BuildTypes.DEBUG.name).apply {
                 isDebuggable = true
                 isMinifyEnabled = false
-                applicationIdSuffix = ".debug"
+                //applicationIdSuffix = ".debug"
                 versionNameSuffix = ApplicationVersions.VERSION_NAME_SUFFIX
                 signingConfig = appExtension.signingConfigs.getByName(SigningConfigs.Debug.NAME)
                 setManifestPlaceholders(
@@ -59,28 +59,28 @@ class AppModuleBuildConfiguration(
                 )
             }
 
-            maybeCreate(BuildTypes.QA.name).apply {
-                isDebuggable = true
-                isMinifyEnabled = true
-                applicationIdSuffix = ".debug"
-                versionNameSuffix = ApplicationVersions.VERSION_NAME_SUFFIX
-                signingConfig = appExtension.signingConfigs.getByName(SigningConfigs.Debug.NAME)
-                proguardFiles(*projectProguardFiles)
-                setManifestPlaceholders(
-                    mapOf("appIconRes" to "@mipmap/ta_ic_launcher")
-                )
-            }
-
-            maybeCreate(BuildTypes.RC.name).apply {
-                isDebuggable = false
-                isMinifyEnabled = true
-                versionNameSuffix = ApplicationVersions.VERSION_NAME_SUFFIX
-                signingConfig = appExtension.signingConfigs.getByName(SigningConfigs.Release.NAME)
-                proguardFiles(*projectProguardFiles)
-                setManifestPlaceholders(
-                    mapOf("appIconRes" to "@mipmap/ta_ic_launcher")
-                )
-            }
+//            maybeCreate(BuildTypes.QA.name).apply {
+//                isDebuggable = true
+//                isMinifyEnabled = true
+//                applicationIdSuffix = ".debug"
+//                versionNameSuffix = ApplicationVersions.VERSION_NAME_SUFFIX
+//                signingConfig = appExtension.signingConfigs.getByName(SigningConfigs.Debug.NAME)
+//                proguardFiles(*projectProguardFiles)
+//                setManifestPlaceholders(
+//                    mapOf("appIconRes" to "@mipmap/ta_ic_launcher")
+//                )
+//            }
+//
+//            maybeCreate(BuildTypes.RC.name).apply {
+//                isDebuggable = false
+//                isMinifyEnabled = true
+//                versionNameSuffix = ApplicationVersions.VERSION_NAME_SUFFIX
+//                signingConfig = appExtension.signingConfigs.getByName(SigningConfigs.Release.NAME)
+//                proguardFiles(*projectProguardFiles)
+//                setManifestPlaceholders(
+//                    mapOf("appIconRes" to "@mipmap/ta_ic_launcher")
+//                )
+//            }
 
             getByName(BuildTypes.RELEASE.name).apply {
                 isDebuggable = false

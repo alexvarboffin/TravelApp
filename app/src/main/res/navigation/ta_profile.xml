@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_info"
+    app:startDestination="@id/infoFragment">
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.www.avia.kg.app.ui.profile.InfoFragment"
+        android:label="InfoFragment"
+        tools:layout="777">
+        <!-- Define actions from this fragment to others -->
+        <action
+            android:id="@+id/action_infoFragment_to_otherFragment"
+            app:destination="@id/otherFragment" />
+    </fragment>
+
+<!--    &lt;!&ndash; Add other fragments if needed &ndash;&gt;-->
+<!--    <fragment-->
+<!--        android:id="@+id/otherFragment"-->
+<!--        android:name="com.travelapp.sdk.ui.OtherFragment"-->
+<!--        android:label="OtherFragment"-->
+<!--        tools:layout="@layout/fragment_other" />-->
+</navigation>

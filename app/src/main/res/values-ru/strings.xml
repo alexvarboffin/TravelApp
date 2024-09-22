@@ -4,7 +4,7 @@
     <string name="ta_tab_flights">Билеты</string>
     <string name="ta_tab_hotels">Отели</string>
     <string name="ta_tab_other">Другое</string>
-    <string name="ta_tab_info">Информация</string>
+    <string name="ta_tab_info">Профиль</string>
     <string name="ta_done">Готово</string>
     <string name="ta_understand">Понятно</string>
     <string name="ta_zero_data_error_title">Что-то пошло не так…</string>
@@ -110,7 +110,7 @@
     <!-- region Flights SDK -->
 
     <!-- MainFlightsFragment -->
-    <string name="ta_search_title">Поиск недорогих авиабилетов</string>
+    <string name="ta_search_title">AVIA KG - Поиск самых дешевых авиабилетов</string>
     <string name="ta_search_departure">Откуда</string>
     <string name="ta_search_arrival">Куда</string>
     <string name="ta_search_departure_date">Когда</string>
@@ -648,7 +648,7 @@
     <!-- region Feature-info -->
 
     <!-- InfoFragment -->
-    <string name="ta_info_title">Информация</string>
+    <string name="ta_info_title">Профиль</string>
     <string name="ta_info_personal_item_title">Персональное</string>
     <string name="ta_info_other_item_title">Другое</string>
     <string name="ta_info_item_favorites">Избранное</string>
@@ -693,6 +693,7 @@
     <!-- AboutAppFragment -->
     <string name="ta_about_app_subtitle">Версия приложения %s</string>
     <string name="ta_about_app_button_text">Посетить сайт</string>
+    <string name="press_again_to_exit">Нажмите ещё раз, чтобы выйти</string>
 
     <!-- endregion -->
 

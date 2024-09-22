@@ -1,4 +1,4 @@
-package com.travelapp
+package com.www.avia.kg.app
 
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -6,6 +6,7 @@ import android.content.Context
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+
 import com.travelapp.debugmenu.DebugMenu
 import timber.log.Timber
 import kotlin.random.Random

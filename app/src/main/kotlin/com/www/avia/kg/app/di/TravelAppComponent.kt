@@ -1,7 +1,7 @@
 /*
 package com.travelapp.di
 
-import com.travelapp.TravelApp
+import com.www.avia.kg.app.TravelApp
 import com.travelapp.sdk.internal.core.di.CoreApi
 import com.travelapp.sdk.internal.core.di.CoreComponent
 import com.travelapp.LocaleChangedReceiver

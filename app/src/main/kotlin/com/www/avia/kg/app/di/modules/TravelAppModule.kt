@@ -1,4 +1,4 @@
-package com.travelapp.di.modules
+package com.www.avia.kg.app.di.modules
 
 import dagger.Module
 

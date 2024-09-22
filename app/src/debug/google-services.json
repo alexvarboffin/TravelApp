@@ -1,43 +1,64 @@
 {
   "project_info": {
-    "project_number": "733484587469",
-    "project_id": "travelapp-debug-app",
-    "storage_bucket": "travelapp-debug-app.appspot.com"
+    "project_number": "638661427398",
+    "project_id": "aviasaleskwk",
+    "storage_bucket": "aviasaleskwk.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:733484587469:android:3fed66a9ac64f4a1064c84",
+        "mobilesdk_app_id": "1:638661427398:android:4efeef27168870d75c97c7",
         "android_client_info": {
-          "package_name": "com.travelapp.debug"
+          "package_name": "com.travel.travelapp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "733484587469-ellh9ba7c7r67nsq0mrd30qpn2soaia0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAhn1zLFKtTJeg0Y5BnjUdPU1syzdoUa7I"
+          "current_key": "AIzaSyC3ZQXVt2etDi_Jt0FRMzMXq0cEG2sOR7Y"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "733484587469-ellh9ba7c7r67nsq0mrd30qpn2soaia0.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "733484587469-i5mts2se8s04aef15n1v0odctrqcva7q.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.travelapp.debug"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638661427398:android:f4ff36fb65b448f15c97c7",
+        "android_client_info": {
+          "package_name": "com.travel.travelapp.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3ZQXVt2etDi_Jt0FRMzMXq0cEG2sOR7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638661427398:android:5daf8d043d87abc05c97c7",
+        "android_client_info": {
+          "package_name": "com.www.avia.kg.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3ZQXVt2etDi_Jt0FRMzMXq0cEG2sOR7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

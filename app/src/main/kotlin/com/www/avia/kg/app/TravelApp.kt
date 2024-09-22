@@ -1,14 +1,16 @@
-package com.travelapp
+package com.www.avia.kg.app
 
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+
 import com.travelapp.config.WhiteLabelConf
+
+
 import com.travelapp.debugmenu.DebugMenu
 import com.travelapp.sdk.config.AdvertisingConfig
 import com.travelapp.sdk.config.CornerType
-import com.travelapp.sdk.config.EnabledInfoItems
 import com.travelapp.sdk.config.IconsType
 import com.travelapp.sdk.config.SdkConfig
 import com.travelapp.sdk.config.TravelSdk

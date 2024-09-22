@@ -1,4 +1,4 @@
-package com.travelapp.di
+package com.www.avia.kg.app.di
 
 import android.content.Context
 
