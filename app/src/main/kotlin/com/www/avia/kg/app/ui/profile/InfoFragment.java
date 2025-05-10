@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.www.avia.kg.app.R;
 import com.www.avia.kg.app.databinding.TaFragmentInfoBinding;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +27,13 @@ public class InfoFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = TaFragmentInfoBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         // Set up RecyclerView
@@ -42,7 +43,7 @@ public class InfoFragment extends Fragment {
                 // Handle navigation on item click
                 NavController navController = Navigation.findNavController(view);
                 Bundle args = new Bundle();
-                args.putString("item_name", item.getTitle()); // Pass arguments if needed
+                args.putString("item_name", item.title); // Pass arguments if needed
                 //navController.navigate(R.id.destinationFragment, args); // Navigate to desired destination
             }
         });

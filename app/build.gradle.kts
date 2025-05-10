@@ -97,8 +97,9 @@ dependencies {
     implementation(AndroidX.APPCOMPAT)
     implementation(AndroidX.RECYCLER_VIEW)
     implementation(AndroidX.CONSTRAINT_LAYOUT)
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
-    implementation(LifeCycle.LIFECYCLE_EXTENSIONS)
+    //implementation(LifeCycle.LIFECYCLE_EXTENSIONS)
 
     // Navigation
     implementation(Navigation.UI)

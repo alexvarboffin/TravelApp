@@ -54,8 +54,8 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
         }
 
         public void bind(final InfoItem item, final OnItemClickListener listener) {
-            binding.icon.setImageResource(item.getIconRes());
-            binding.title.setText(item.getTitle());
+            binding.icon.setImageResource(item.iconRes);
+            binding.title.setText(item.title);
             binding.getRoot().setOnClickListener(v -> listener.onItemClick(item));
         }
     }
