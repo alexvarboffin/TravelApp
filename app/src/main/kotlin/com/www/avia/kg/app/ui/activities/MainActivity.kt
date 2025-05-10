@@ -1,9 +1,10 @@
 package com.www.avia.kg.app.ui.activities
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.hardware.SensorManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,7 @@ import android.util.Log
 import android.view.Menu
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
@@ -20,7 +22,6 @@ import androidx.navigation.fragment.NavHostFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.seismic.ShakeDetector
-
 import com.travelapp.config.AppTabsList
 import com.travelapp.debugmenu.DebugMenu
 import com.travelapp.sdk.config.AppTabs
@@ -41,10 +42,12 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.take
 import timber.log.Timber
-import com.travelapp.sdk.R as coreR
+import java.net.URLEncoder
+
 
 class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHandler, TabSelector {
 
+    val phoneNumber = "996777505707"
 
     private var doubleBackToExitPressedOnce: Boolean = false
     private val TAG0: String = "@@@"
@@ -207,18 +210,40 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
                     }
 
                     com.travelapp.sdk.R.id.ta_other2 -> {
+//                        if (isAppInstalled(ctx, "com.whatsapp.w4b")) {
+//                            appPackage = "com.whatsapp.w4b";
+//                            //do ...
+//                        } else if (isAppInstalled(ctx, "com.whatsapp")) {
+//                            appPackage = "com.whatsapp";
+//                            //do ...
+//                        } else {
+//                            Toast.makeText(ctx, "whatsApp is not installed", Toast.LENGTH_LONG).show();
+//                        }
                         val intent = Intent(Intent.ACTION_VIEW).apply {
-                            data = Uri.parse("https://wa.me/996777505707")
+
+                            val url = "https://api.whatsapp.com/send?phone=$phoneNumber&text=" + URLEncoder.encode(
+                                    "",
+                                    "UTF-8"
+                                )
+                            setPackage("com.whatsapp")
+                            setData(url.toUri())
                         }
+
                         if (intent.resolveActivity(packageManager) != null) {
                             startActivity(intent)
                         } else {
-                            // Сообщение пользователю о том, что WhatsApp не установлен
-                            Toast.makeText(
-                                this@MainActivity,
-                                "WhatsApp не установлен",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            val intent = Intent(Intent.ACTION_VIEW).apply {
+                                data = "https://wa.me/$phoneNumber".toUri()
+                            }
+                            if (intent.resolveActivity(packageManager) != null) {
+                                startActivity(intent)
+                            } else {
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "WhatsApp не установлен",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
 
                         false
@@ -298,7 +323,7 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
 //    }
 
 
-//    private fun setupBottomNavigationBar() = with(binding) {
+    //    private fun setupBottomNavigationBar() = with(binding) {
 //        (supportFragmentManager.findFragmentById(R.id.navHostContainer) as NavHostFragment).also {
 //            navController = it.navController
 //        }
@@ -334,6 +359,18 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
 //        // Присваиваем текущий NavController
 //        currentNavController = MutableStateFlow(navController)
 //    }
+
+    private fun isAppInstalled(ctx: Context, packageName: String): Boolean {
+        val pm: PackageManager = ctx.getPackageManager()
+        var app_installed: Boolean
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            app_installed = true
+        } catch (e: PackageManager.NameNotFoundException) {
+            app_installed = false
+        }
+        return app_installed
+    }
 
     private fun setupBottomNavigationBar00() = with(binding) {
 
@@ -469,7 +506,8 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
                     doubleBackToExitPressedOnce = false
                 }, 1500)
             } else {
-                binding.bottomBar.selectedItemId = AppTabs.Flights.idRes // Replace with the actual ID of the first tab
+                binding.bottomBar.selectedItemId =
+                    AppTabs.Flights.idRes // Replace with the actual ID of the first tab
 
             }
         }

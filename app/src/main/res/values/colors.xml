@@ -7,14 +7,16 @@
     <color name="ta_primary_light">#746481</color>
     <color name="ta_primary_dark">#746481</color>
     
-    <color name="ta_primary_disable_light">#4De61965</color>
-    <color name="ta_primary_disable_dark">#4Dff6497</color>
+    <color name="ta_primary_disable_light">#9D98AF</color>
+    <color name="ta_primary_disable_dark">#9D98AF</color>
     
-    <color name="ta_primary_pressed_light">#a70037</color>
+<!--    <color name="ta_primary_pressed_light">#a70037</color>-->
+    <color name="ta_primary_pressed_light">#9D98AF</color>
+
     <color name="ta_primary_pressed_dark">#746481</color>
     
-    <color name="ta_surface_tint_light">#29e61965</color>
-    <color name="ta_surface_tint_dark">#29ff6497</color>
+    <color name="ta_surface_tint_light">#41BAA1CE</color>
+    <color name="ta_surface_tint_dark">#9D98AF</color>
 
 
     <color name="ta_surface_background_dark">#0D0B19</color>

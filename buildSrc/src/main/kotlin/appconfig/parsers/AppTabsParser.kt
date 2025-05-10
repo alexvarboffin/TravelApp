@@ -61,10 +61,9 @@ object AppTabsParser {
         }
 
 
-        val file =
-            appModule.layout.projectDirectory.file("$srcDir$packageNamePath/$filename").asFile
-        file.parentFile.mkdirs()
-        file.writeText(template.format(listString))
+//        val file = appModule.layout.projectDirectory.file("$srcDir$packageNamePath/$filename").asFile
+//        file.parentFile.mkdirs()
+//        file.writeText(template.format(listString))
 
         println("✅ ")
     }
