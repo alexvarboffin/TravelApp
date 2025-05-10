@@ -42,8 +42,8 @@ android {
         manifestPlaceholders["custom_app_id"] = configuration.ApplicationVersions.APPLICATION_ID
         manifestPlaceholders["intent_filter"] = prop.getProperty(PROP_HANDLING_LINK)
         archivesName = "$applicationId-$versionName"
-        versionCode = 1
-        versionName = "1"
+        versionCode = 250000
+        versionName = "1.3.250000"
     }
     compileSdk = 35
     buildToolsVersion = "35.0.0"

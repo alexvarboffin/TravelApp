@@ -41,7 +41,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.take
 import timber.log.Timber
-
+import com.travelapp.sdk.R as coreR
 
 class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHandler, TabSelector {
 
@@ -89,6 +89,8 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             permissionRequestLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
+
+        //coreR.mipmap.ta_ic_launcher
 
     }
 
