@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/ta_primary"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TravelApp.HeadlineLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/ta_hotels_search_title"
+                android:textColor="?attr/ta_homeScreenText"
+                app:layout_constraintBottom_toTopOf="@id/inputsView" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/inputsView"
+                style="@style/TravelApp.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.travelapp.sdk.internal.ui.views.TaMainInputView
+                        android:id="@+id/cityOrHotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        app:ta_drawable_tint="?attr/ta_onSurfaceSecondary"
+                        app:ta_hint="@string/ta_hotels_search_city_or_hotel"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.travelapp.sdk.internal.ui.views.TaMainInputView
+                        android:id="@+id/period"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        app:ta_drawable_tint="?attr/ta_onSurfaceSecondary"
+                        app:layout_constraintTop_toBottomOf="@id/cityOrHotel" />
+
+                    <com.travelapp.sdk.internal.ui.views.TaMainInputView
+                        android:id="@+id/guests"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        app:ta_drawable_tint="?attr/ta_onSurfaceSecondary"
+                        app:layout_constraintTop_toBottomOf="@id/period" />
+
+                    <com.travelapp.sdk.internal.ui.views.TAButton
+                        android:id="@+id/searchButton"
+                        style="@style/TravelApp.FilledButton"
+                        android:layout_width="match_parent"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/ta_hotels_search_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/guests" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.travelapp.sdk.internal.ui.views.FullScreenErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.travelapp.sdk.internal.ui.views.HotelsNotAvailableVIew
+        android:id="@+id/not_available"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.travelapp.sdk.internal.ui.views.AnimatedLoaderView
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
