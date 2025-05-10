@@ -29,6 +29,11 @@ private val prop: Properties = Properties().apply {
 
 
 android {
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     namespace = "com.www.avia.kg.app"
     AppModuleBuildConfiguration(project, appExtension = this).configure()
 
@@ -59,19 +64,19 @@ easylauncher {
     buildTypes {
         create(configuration.BuildTypes.DEBUG.name) {
             configure(
-                listOf("@mipmap/ta_ic_launcher"),
+                listOf("@mipmap/ic_launcher"),
                 configuration.BuildTypes.DEBUG.ribbonColor
             )
         }
         create(configuration.BuildTypes.QA.name) {
             configure(
-                listOf("@mipmap/ta_ic_launcher"),
+                listOf("@mipmap/ic_launcher"),
                 configuration.BuildTypes.QA.ribbonColor
             )
         }
         create(configuration.BuildTypes.RC.name) {
             configure(
-                listOf("@mipmap/ta_ic_launcher"),
+                listOf("@mipmap/ic_launcher"),
                 configuration.BuildTypes.RC.ribbonColor
             )
         }

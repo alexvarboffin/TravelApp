@@ -42,7 +42,7 @@ class LibraryModuleBuildConfiguration(
             }
             getByName(BuildTypes.RELEASE.name).apply {
                 isDebuggable = false
-                isMinifyEnabled = true
+                isMinifyEnabled = false
                 proguardFiles(*projectProguardFiles)
             }
         }

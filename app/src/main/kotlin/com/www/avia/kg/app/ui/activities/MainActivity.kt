@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.Menu
 import android.widget.Toast
@@ -462,9 +463,9 @@ class MainActivity : BaseActivity(R.layout.activity_main), BottomBarVisibilityHa
 
                 makeToaster(R.string.press_again_to_exit)
 
-                Handler().postDelayed({
+                Handler(Looper.getMainLooper()).postDelayed({
                     doubleBackToExitPressedOnce = false
-                }, 1400)
+                }, 1500)
             } else {
                 binding.bottomBar.selectedItemId = AppTabs.Flights.idRes // Replace with the actual ID of the first tab
 
